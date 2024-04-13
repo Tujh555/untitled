@@ -9,6 +9,6 @@ find_package(OpenMP REQUIRED)
 add_executable(untitled main.cpp)
 
 if (OpenMP_C_FOUND)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set(CMAKE_CXX_FLAGS "-fopenmp")
     target_link_libraries(untitled PRIVATE ${OpenMP_C_LIBRARIES})
 endif ()
