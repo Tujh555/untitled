@@ -2,8 +2,10 @@
 #include <omp.h>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+#pragma omp parallel num_threads(4)
+    {
+        std::cout << "Hello world!\n" << std::endl;
+    }
 
-    std::cout << "Hello from process: " << omp_get_thread_num() << std::endl;
     return 0;
 }
