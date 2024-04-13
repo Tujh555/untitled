@@ -2,7 +2,9 @@
 #include <omp.h>
 
 int main() {
-#pragma omp parallel num_threads(4)
+    omp_set_num_threads(4);
+
+    #pragma omp parallel
     {
         std::cout << "Hello world!\n" << std::endl;
     }
